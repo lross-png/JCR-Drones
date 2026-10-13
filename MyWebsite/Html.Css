@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVISO SMART | Weed Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="#" class="logo">KWS<span>.</span></a>
+
+        <nav class="navigation">
+            <a href="#home">Home</a>
+            <a href="#system">The System</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#varieties">Varieties</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="header-button">Get in touch</a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-image"></div>
+
+        <div class="hero-content">
+            <p class="eyebrow">SMART FARMING SOLUTIONS</p>
+
+            <h1>CONVISO<sup>®</sup><br>SMART</h1>
+
+            <h2>Unleash the Power of Weed Control</h2>
+
+            <p>
+                Revolutionise beet farming with an innovative system
+                designed to support effective weed management,
+                fewer herbicide applications and productive crops.
+            </p>
+
+            <a href="#system" class="button">Discover the system</a>
+        </div>
+
+        <div class="hero-label">
+            INNOVATION FOR THE FUTURE OF FARMING
+        </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro" id="system">
+        <p class="eyebrow">THE CONVISO SMART SYSTEM</p>
+
+        <h2>Two key components.<br>
+            One smart solution.</h2>
+
+        <p class="intro-text">
+            CONVISO SMART combines specially bred SMART KWS beet
+            varieties with CONVISO ONE herbicide technology.
+            Together, these components form an integrated approach
+            to beet crop weed management.
+        </p>
+    </section>
+
+    <!-- COMPONENT CARDS -->
+    <section class="cards">
+
+        <article class="card">
+            <img
+                src="https://mediamaster.kws.com/04_Company/Press/02_Press_Report/2022/KWS-PM-2022-07-25-CONVISO-SMART-sugarbeets.jpg"
+                alt="Green beet plants growing in agricultural rows">
+
+            <div class="card-content">
+                <span class="number">01</span>
+
+                <h3>SMART KWS Varieties</h3>
+
+                <p>
+                    Specially bred sugarbeet and fodderbeet
+                    varieties developed for tolerance to
+                    CONVISO ONE herbicide.
+                </p>
+
+                <a href="#varieties" class="text-link">
+                    Explore varieties →
+                </a>
+            </div>
+        </article>
+
+        <article class="card">
+            <img
+                src="https://www.kws.com/nz/media/unleashthepowerofweedcontrol_crop.jpg"
+                alt="CONVISO SMART agricultural campaign image">
+
+            <div class="card-content">
+                <span class="number">02</span>
+
+                <h3>CONVISO ONE Herbicide</h3>
+
+                <p>
+                    A broad-spectrum herbicide designed to work
+                    alongside compatible SMART KWS beet varieties.
+                </p>
+
+                <a href="#benefits" class="text-link">
+                    Discover the benefits →
+                </a>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits" id="benefits">
+        <div class="benefits-image"></div>
+
+        <div class="benefits-content">
+            <p class="eyebrow">SMARTER WEED MANAGEMENT</p>
+
+            <h2>A new approach<br>to beet farming.</h2>
+
+            <p>
+                The CONVISO SMART system brings together seed
+                innovation and herbicide technology to help
+                growers manage weeds in sugarbeet and fodderbeet.
+            </p>
+
+            <ul>
+                <li>✓ Specially bred SMART KWS varieties</li>
+                <li>✓ An integrated weed management approach</li>
+                <li>✓ Designed for use with CONVISO ONE</li>
+                <li>✓ Solutions for modern beet growers</li>
+            </ul>
+
+            <a href="#contact" class="button">Talk to our team</a>
+        </div>
+    </section>
+
+    <!-- VARIETIES -->
+    <section class="varieties" id="varieties">
+        <p class="eyebrow">OUR BEET VARIETIES</p>
+
+        <h2>Innovative solutions for growers</h2>
+
+        <div class="variety-grid">
+
+            <div class="variety">
+                <div class="variety-icon">🌱</div>
+                <h3>SMART SANYA KWS</h3>
+                <p>
+                    A SMART sugarbeet variety developed for
+                    productive beet growing.
+                </p>
+            </div>
+
+            <div class="variety">
+                <div class="variety-icon">🌿</div>
+                <h3>SMART JOSINA KWS</h3>
+                <p>
+                    A SMART fodderbeet variety suited to
+                    grazing or lifting.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <p class="eyebrow">LET'S TALK</p>
+
+        <h2>Interested in CONVISO SMART?</h2>
+
+        <p>
+            Contact the KWS New Zealand team to learn more
+            about varieties and the CONVISO SMART system.
+        </p>
+
+        <a href="https://www.kws.com/nz/en/products/conviso-smart/"
+           class="button button-light">
+            Visit the KWS website
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="#home" class="logo footer-logo">KWS<span>.</span></a>
+
+        <p>
+            CONVISO SMART · Agricultural innovation
+        </p>
+
+        <p class="copyright">
+            Independent website recreation for demonstration purposes.
+        </p>
+    </footer>
+
+</body>
+</html>
