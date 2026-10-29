@@ -1,0 +1,562 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #242b24;
+    background-color: #ffffff;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+:root {
+    --green: #176a3a;
+    --dark-green: #103d29;
+    --light-green: #eaf2e9;
+    --orange: #f47721;
+    --text: #242b24;
+}
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    min-height: 82px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: #ffffff;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--green);
+    letter-spacing: -2px;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 27px;
+}
+
+.navigation a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: var(--orange);
+}
+
+.header-button {
+    background: var(--green);
+    color: white;
+    padding: 11px 20px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.header-button:hover {
+    background: var(--dark-green);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 590px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--dark-green);
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(10, 42, 27, 0.94) 0%,
+            rgba(10, 42, 27, 0.78) 42%,
+            rgba(10, 42, 27, 0.12) 100%
+        ),
+        url("https://mediamaster.kws.com/04_Company/Press/02_Press_Report/2022/KWS-PM-2022-07-25-CONVISO-SMART-sugarbeets.jpg");
+
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.01);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    padding: 80px 8%;
+    color: white;
+}
+
+.eyebrow {
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(58px, 8vw, 100px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    margin-bottom: 28px;
+    font-weight: 900;
+}
+
+.hero h1 sup {
+    font-size: 24px;
+    vertical-align: top;
+    letter-spacing: 0;
+}
+
+.hero h2 {
+    font-size: clamp(22px, 3vw, 34px);
+    line-height: 1.3;
+    margin-bottom: 18px;
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 510px;
+    font-size: 16px;
+    color: #e3e9e3;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 25px;
+    background: var(--orange);
+    color: #ffffff;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background: #d85f10;
+    transform: translateY(-2px);
+}
+
+.hero-label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--orange);
+    color: #ffffff;
+    padding: 15px 28px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* INTRODUCTION */
+
+.intro {
+    max-width: 850px;
+    margin: auto;
+    padding: 95px 25px 55px;
+    text-align: center;
+}
+
+.intro h2,
+.varieties h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 25px;
+    color: var(--dark-green);
+}
+
+.intro-text {
+    max-width: 680px;
+    margin: auto;
+    color: #667067;
+    font-size: 16px;
+}
+
+/* COMPONENT CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 20px 30px 100px;
+}
+
+.card {
+    background: #f5f7f3;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+}
+
+.card > img {
+    height: 260px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 30px;
+}
+
+.number {
+    display: inline-block;
+    color: var(--orange);
+    font-weight: 900;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: var(--dark-green);
+    font-size: 25px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.card p {
+    color: #667067;
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+.text-link {
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.text-link:hover {
+    color: var(--orange);
+}
+
+/* BENEFITS SECTION */
+
+.benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--light-green);
+}
+
+.benefits-image {
+    min-height: 520px;
+    background-image: url(
+        "https://mediamaster.kws.com/04_Company/Press/02_Press_Report/2022/KWS-PM-2022-07-25-CONVISO-SMART-sugarbeets.jpg"
+    );
+    background-size: cover;
+    background-position: center;
+}
+
+.benefits-content {
+    align-self: center;
+    padding: 70px 12%;
+}
+
+.benefits-content h2 {
+    font-size: clamp(32px, 4vw, 45px);
+    line-height: 1.2;
+    color: var(--dark-green);
+    margin-bottom: 25px;
+}
+
+.benefits-content > p:not(.eyebrow) {
+    color: #59665b;
+    margin-bottom: 22px;
+}
+
+.benefits-content ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.benefits-content li {
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.benefits-content li::first-letter {
+    color: var(--green);
+}
+
+/* VARIETIES SECTION */
+
+.varieties {
+    text-align: center;
+    padding: 95px 7%;
+}
+
+.varieties > h2 {
+    margin-bottom: 45px;
+}
+
+.variety-grid {
+    max-width: 950px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.variety {
+    padding: 40px 30px;
+    background: #f5f7f3;
+    border-bottom: 4px solid var(--green);
+}
+
+.variety-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.variety h3 {
+    color: var(--dark-green);
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.variety p {
+    color: #667067;
+    font-size: 14px;
+}
+
+/* CONTACT SECTION */
+
+.contact {
+    text-align: center;
+    padding: 85px 25px;
+    background:
+        linear-gradient(
+            rgba(12, 59, 37, 0.94),
+            rgba(12, 59, 37, 0.94)
+        ),
+        url("https://mediamaster.kws.com/04_Company/Press/02_Press_Report/2022/KWS-PM-2022-07-25-CONVISO-SMART-sugarbeets.jpg")
+        center / cover;
+    color: white;
+}
+
+.contact h2 {
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.contact > p:not(.eyebrow) {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #dce8df;
+}
+
+.button-light {
+    background: white;
+    color: var(--dark-green);
+}
+
+.button-light:hover {
+    background: #eaf2e9;
+    color: var(--dark-green);
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 35px 7%;
+    text-align: center;
+    background: #102d20;
+    color: #d2ded5;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 13px;
+}
+
+.footer .copyright {
+    margin-top: 10px;
+    color: #aab9ad;
+    font-size: 11px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .navigation {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px 25px;
+    }
+
+    .hero {
+        min-height: 540px;
+    }
+
+    .cards {
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 20px;
+    }
+
+    .benefits-content {
+        padding: 45px 8%;
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 15px 5%;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .header-button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .navigation {
+        gap: 8px 17px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 560px;
+    }
+
+    .hero-image {
+        background-image:
+            linear-gradient(
+                90deg,
+                rgba(10, 42, 27, 0.88),
+                rgba(10, 42, 27, 0.57)
+            ),
+            url("https://mediamaster.kws.com/04_Company/Press/02_Press_Report/2022/KWS-PM-2022-07-25-CONVISO-SMART-sugarbeets.jpg");
+    }
+
+    .hero-content {
+        padding: 55px 7%;
+    }
+
+    .hero h1 {
+        font-size: 62px;
+        letter-spacing: -2px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .hero-content > p:not(.eyebrow) {
+        font-size: 14px;
+    }
+
+    .hero-label {
+        font-size: 8px;
+        padding: 10px 13px;
+    }
+
+    .intro {
+        padding: 65px 22px 35px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 15px 20px 65px;
+    }
+
+    .card > img {
+        height: 220px;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-image {
+        min-height: 270px;
+    }
+
+    .benefits-content {
+        padding: 45px 25px 55px;
+    }
+
+    .varieties {
+        padding: 65px 20px;
+    }
+
+    .variety-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        padding: 65px 22px;
+    }
