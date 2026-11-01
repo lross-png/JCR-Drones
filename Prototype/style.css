@@ -112,9 +112,7 @@ img {
             rgba(10, 42, 27, 0.94) 0%,
             rgba(10, 42, 27, 0.78) 42%,
             rgba(10, 42, 27, 0.12) 100%
-        ),
-        url("https://mediamaster.kws.com/04_Company/Press/02_Press_Report/2022/KWS-PM-2022-07-25-CONVISO-SMART-sugarbeets.jpg");
-
+        )
     background-size: cover;
     background-position: center;
     transform: scale(1.01);
