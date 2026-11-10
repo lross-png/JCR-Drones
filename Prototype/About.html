@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | JCR Drones</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#75df16;--dark:#050d09;--panel:#102017}
+body{background:var(--dark);color:white;font-family:Arial,sans-serif}
+header{padding:15px 4%;background:#08130f;border-bottom:2px solid var(--green);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.logo{font-size:30px;font-weight:900;font-style:italic}
+.logo span{color:var(--green)}
+.logo small{display:block;font-size:12px;font-weight:normal;font-style:normal;margin-top:5px}
+nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+nav a{padding:13px 17px;color:white;text-decoration:none;font-weight:bold;border-radius:6px;font-size:14px}
+nav a:hover,nav a.active{background:#48ad08}
+.hero{min-height:340px;padding:75px 7%;display:flex;align-items:center;background:linear-gradient(90deg,rgba(3,14,7,.94),rgba(3,14,7,.35)),url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{max-width:720px}
+.kicker{color:var(--green);font-size:13px;font-weight:bold;letter-spacing:3px}
+h1{font-size:clamp(42px,6vw,70px);margin:15px 0}
+h1 span,h2 span{color:var(--green)}
+.hero p:last-child{font-size:19px;color:#eee;line-height:1.5}
+.section{max-width:1200px;margin:auto;padding:75px 5%}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.intro h2{font-size:clamp(30px,4vw,43px);margin:12px 0 20px}
+.intro p{color:#d4ddd5;line-height:1.8;margin-bottom:16px}
+.photo{min-height:350px;border:2px solid var(--green);border-radius:12px;background:url('https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1100&q=85') center/cover}
+.button{display:inline-block;padding:13px 23px;background:var(--green);color:#07120b;text-decoration:none;font-weight:bold;border-radius:6px;margin-top:10px}
+.button:hover{background:white}
+.values{background:#102017;padding:70px 5%;text-align:center}
+.values h2{font-size:clamp(28px,4vw,40px);margin:12px 0 35px}
+.grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{padding:32px 24px;background:#07130c;border:1px solid #315522;border-top:3px solid var(--green);border-radius:7px}
+.icon{font-size:38px;color:var(--green)}
+.card h3{font-size:20px;margin:14px 0 10px}
+.card p{font-size:14px;line-height:1.7;color:#cbd5cc}
+.promise{padding:65px 20px;text-align:center;background:linear-gradient(110deg,#17351c,#09160e)}
+.promise h2{font-size:32px;margin-bottom:14px}
+.promise p{color:#d7e0d8;line-height:1.7;max-width:700px;margin:auto}
+footer{padding:28px 5%;background:#030905;border-top:3px solid var(--green);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;color:#bbb;font-size:13px}
+footer strong{color:var(--green)}
+@media(max-width:750px){
+header{justify-content:center}
+nav{justify-content:center}
+nav a{padding:10px}
+.intro{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr}
+.photo{min-height:250px}
+footer{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">JCR <span>DRONES</span>
+<small>Smart farming. Smarter weed control.</small></div>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html" class="active">About</a>
+<a href="benefits.html">Benefits</a>
+<a href="discover.html">Discover More</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<p class="kicker">LOCAL KNOWLEDGE · PROFESSIONAL SERVICE</p>
+<h1>About <span>JCR Drones</span></h1>
+<p>Precision drone spraying. A modern approach to managing your land.</p>
+</div>
+</section>
+
+<section class="section intro">
+<div>
+<p class="kicker">WHO WE ARE</p>
+<h2>Meet <span>JCR Drones.</span></h2>
+<p>JCR Drones is a locally owned and operated drone spraying business based in Hokitika, West Coast, New Zealand.</p>
+<p>Our mission is to help farmers, landowners and businesses manage their land efficiently with modern drone technology.</p>
+<p>We aim to provide a professional and reliable service, offering practical spraying solutions for suitable properties and terrain.</p>
+<p>We understand that every property is different. That's why we consider the needs of each job and work towards an approach that suits the site and its requirements.</p>
+<a href="benefits.html" class="button">Explore the Benefits →</a>
+</div>
+<div class="photo" role="img" aria-label="Agricultural drone and farmland"></div>
+</section>
+
+<section class="values">
+<p class="kicker">WHAT WE STAND FOR</p>
+<h2>Our <span>Commitment.</span></h2>
+<div class="grid">
+<div class="card">
+<div class="icon">◎</div>
+<h3>Precision</h3>
+<p>Taking a targeted approach to spraying applications and the requirements of each job.</p>
+</div>
+<div class="card">
+<div class="icon">◴</div>
+<h3>Efficiency</h3>
+<p>Using modern technology to provide a practical alternative for suitable spraying work.</p>
+</div>
+<div class="card">
+<div class="icon">✓</div>
+<h3>Professional Service</h3>
+<p>Putting safety, responsible operations and customer service first.</p>
+</div>
+</div>
+</section>
+
+<section class="promise" id="contact">
+<p class="kicker">JCR DRONES · WEST COAST</p>
+<h2>Let's talk about your property.</h2>
+<p>Have a spraying job in mind? Get in touch with JCR Drones to discuss your requirements and whether drone spraying may be suitable.</p>
+<a href="mailto:info@jcrdrones.co.nz" class="button">Email JCR Drones →</a>
+</section>
+
+<footer>
+<div><strong>JCR DRONES</strong><br>Smart farming. Smarter weed control.</div>
+<div>Hokitika · West Coast · New Zealand</div>
+</footer>
+
+</body>
+</html>

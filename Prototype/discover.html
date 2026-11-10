@@ -1,17 +1,585 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover More</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover More | JCR Drones</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #75df16;
+  --dark: #050d09;
+  --panel: #102017;
+}
+
+body {
+  background: var(--dark);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+
+header {
+  padding: 15px 4%;
+  background: #08130f;
+  border-bottom: 2px solid var(--green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.logo span {
+  color: var(--green);
+}
+
+.logo small {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  margin-top: 5px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  padding: 13px 17px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+nav a:hover,
+nav a.active {
+  background: #48ad08;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 390px;
+  padding: 75px 7%;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3,14,7,.94),
+      rgba(3,14,7,.35)
+    ),
+    url("https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.kicker {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 70px);
+  margin: 15px 0;
+}
+
+.hero h1 span,
+h2 span {
+  color: var(--green);
+}
+
+.hero p:last-child {
+  font-size: 19px;
+  color: #eee;
+  line-height: 1.6;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 24px;
+  background: var(--green);
+  color: #07120b;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-top: 22px;
+}
+
+.button:hover {
+  background: white;
+}
+
+/* INTRODUCTION */
+
+.intro {
+  max-width: 1050px;
+  margin: auto;
+  padding: 75px 25px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: clamp(29px, 4vw, 42px);
+  margin: 15px 0;
+}
+
+.intro p {
+  color: #d1dbd3;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* HOW IT WORKS */
+
+.process {
+  padding: 70px 5%;
+  background: #102017;
+  text-align: center;
+}
+
+.process h2 {
+  font-size: 36px;
+  margin: 15px 0 35px;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 32px 25px;
+  background: #07130c;
+  border: 1px solid #315522;
+  border-top: 3px solid var(--green);
+  border-radius: 7px;
+  text-align: left;
+}
+
+.number {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.icon {
+  color: var(--green);
+  font-size: 38px;
+  margin: 15px 0;
+}
+
+.card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #cbd5cc;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* TECHNOLOGY SECTION */
+
+.technology {
+  padding: 75px 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.technology h2 {
+  font-size: 36px;
+  margin: 15px 0 20px;
+}
+
+.technology p {
+  color: #d1dbd3;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.photo {
+  min-height: 350px;
+  border: 2px solid var(--green);
+  border-radius: 12px;
+  background:
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1100&q=85")
+    center/cover;
+}
+
+/* APPLICATIONS */
+
+.applications {
+  background: #102017;
+  padding: 70px 5%;
+  text-align: center;
+}
+
+.applications h2 {
+  font-size: 36px;
+  margin: 15px 0 35px;
+}
+
+.application {
+  padding: 30px 22px;
+  background: #07130c;
+  border-bottom: 3px solid var(--green);
+  border-radius: 6px;
+}
+
+.application h3 {
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.application p {
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact {
+  padding: 70px 20px;
+  text-align: center;
+  background: linear-gradient(110deg, #17351c, #09160e);
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin: 15px 0;
+}
+
+.contact p {
+  color: #ddd;
+  line-height: 1.7;
+  max-width: 750px;
+  margin: auto;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 28px 5%;
+  background: #030905;
+  border-top: 3px solid var(--green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  color: #bbb;
+  font-size: 13px;
+}
+
+footer strong {
+  color: var(--green);
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+  header {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav a {
+    padding: 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .technology {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    min-height: 250px;
+  }
+
+  footer {
+    justify-content: center;
+    text-align: center;
+  }
+}
+</style>
 </head>
+
 <body>
 
-    <h1>Discover More</h1>
+<!-- HEADER -->
 
-    <p>Welcome to our Discover More page!</p>
+<header>
+  <div class="logo">
+    JCR <span>DRONES</span>
+    <small>Smart farming. Smarter weed control.</small>
+  </div>
 
-    <a href="Index.htm">Back to Home</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="benefits.html">Benefits</a>
+    <a href="discover.html" class="active">Discover More</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="kicker">PRECISION FARMING ABOVE</p>
+
+    <h1>
+      Discover <span>More.</span>
+    </h1>
+
+    <p>
+      Discover how modern drone technology
+      is changing the way we approach
+      agricultural spraying and land management.
+    </p>
+
+    <a href="#technology" class="button">
+      Explore the Technology →
+    </a>
+  </div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="intro">
+  <p class="kicker">THE FUTURE OF SPRAYING</p>
+
+  <h2>
+    A New Perspective on
+    <span>Land Management.</span>
+  </h2>
+
+  <p>
+    Agricultural drone technology offers farmers
+    and landowners another way to approach
+    spraying requirements. By combining aerial
+    technology with targeted applications, drone
+    spraying can provide practical solutions for
+    suitable properties and terrain.
+  </p>
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="process">
+  <p class="kicker">THE PROCESS</p>
+
+  <h2>
+    How Does <span>It Work?</span>
+  </h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="number">01 / ASSESSMENT</span>
+      <div class="icon">⌖</div>
+      <h3>Assess the Area</h3>
+      <p>
+        We discuss your property, spraying
+        requirements and the areas you want
+        treated to determine whether drone
+        spraying is suitable.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="number">02 / PLANNING</span>
+      <div class="icon">◎</div>
+      <h3>Plan the Application</h3>
+      <p>
+        The job is planned around the site,
+        conditions, product requirements and
+        applicable safety and operating rules.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="number">03 / OPERATION</span>
+      <div class="icon">✥</div>
+      <h3>Professional Operation</h3>
+      <p>
+        Once approved and conditions are suitable,
+        the spraying work can be carried out
+        using the appropriate drone technology.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TECHNOLOGY -->
+
+<section class="technology" id="technology">
+
+  <div>
+    <p class="kicker">MODERN DRONE TECHNOLOGY</p>
+
+    <h2>
+      Precision From <span>Above.</span>
+    </h2>
+
+    <p>
+      Agricultural spraying drones are designed
+      to carry spraying equipment and apply
+      suitable products from above the ground.
+    </p>
+
+    <p>
+      Their aerial operation can help access
+      selected areas without requiring ground
+      machinery to travel across the entire
+      treatment area.
+    </p>
+
+    <p>
+      Every operation needs to consider the
+      product being applied, environmental
+      conditions, surrounding areas and
+      applicable regulations.
+    </p>
+
+    <a href="benefits.html" class="button">
+      View All Benefits →
+    </a>
+  </div>
+
+  <div class="photo"></div>
+
+</section>
+
+<!-- APPLICATIONS -->
+
+<section class="applications">
+
+  <p class="kicker">POTENTIAL APPLICATIONS</p>
+
+  <h2>
+    Where Can Drone Spraying <span>Help?</span>
+  </h2>
+
+  <div class="grid">
+
+    <div class="application">
+      <h3>Farming & Agriculture</h3>
+      <p>
+        Explore modern spraying options
+        for suitable agricultural land
+        and farming operations.
+      </p>
+    </div>
+
+    <div class="application">
+      <h3>Challenging Terrain</h3>
+      <p>
+        Consider aerial spraying where
+        steep or uneven ground makes
+        conventional access difficult.
+      </p>
+    </div>
+
+    <div class="application">
+      <h3>Land Management</h3>
+      <p>
+        Explore targeted treatment options
+        for suitable property and
+        vegetation management requirements.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+  <p class="kicker">JCR DRONES · HOKITIKA</p>
+
+  <h2>
+    Ready to Discover a
+    <span>Smarter Approach?</span>
+  </h2>
+
+  <p>
+    Every property and spraying job is different.
+    Contact JCR Drones to discuss your requirements
+    and find out whether drone spraying is suitable
+    for your needs.
+  </p>
+
+  <a href="mailto:info@jcrdrones.co.nz" class="button">
+    Contact JCR Drones →
+  </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div>
+    <strong>JCR DRONES</strong>
+    <br>
+    Smart farming. Smarter weed control.
+  </div>
+
+  <div>
+    Hokitika · West Coast · New Zealand
+  </div>
+
+  <div>
+    Local Knowledge. Professional Service.
+    Precision from Above.
+  </div>
+</footer>
 
 </body>
 </html>
