@@ -1,59 +1,537 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JCR Drones</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JCR Drones | Precision Farming Above</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #050d09;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --green: #75df16;
+  --dark: #06100b;
+}
+
+/* HEADER */
+
+header {
+  min-height: 94px;
+  padding: 12px 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #08130f;
+  border-bottom: 2px solid #1e4019;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.logo span {
+  color: var(--green);
+}
+
+.logo small {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0;
+  margin-top: 8px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  padding: 17px 23px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+nav a:hover,
+nav a.active {
+  background: #48ad08;
+}
+
+nav .contact-link {
+  border: 2px solid var(--green);
+  margin-left: 15px;
+}
+
+/* BUTTONS */
+
+.button {
+  display: inline-block;
+  padding: 13px 27px;
+  background: var(--green);
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: .2s;
+}
+
+.button:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  padding: 45px 6%;
+  background:
+    linear-gradient(90deg,
+      rgba(2,15,7,.94) 0%,
+      rgba(2,15,7,.72) 38%,
+      rgba(2,15,7,.05) 100%),
+    url("https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1800&q=85")
+    center 48% / cover no-repeat;
+  border-bottom: 3px solid #305c12;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 75px);
+  line-height: 1.02;
+  margin-bottom: 12px;
+}
+
+.hero h1 span {
+  color: var(--green);
+  font-style: italic;
+}
+
+.hero p {
+  font-size: 21px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* ABOUT AND FEATURES */
+
+.about {
+  padding: 30px 5%;
+  display: grid;
+  grid-template-columns: 1.25fr repeat(4, 1fr);
+  align-items: center;
+  gap: 15px;
+  background: linear-gradient(110deg, #07130c, #0b190d);
+}
+
+.about-text {
+  padding-right: 22px;
+}
+
+.about-text h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.underline {
+  width: 105px;
+  height: 3px;
+  background: var(--green);
+  margin-bottom: 12px;
+}
+
+.about-text p {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #eee;
+}
+
+.about-text .button {
+  margin-top: 15px;
+  padding: 9px 19px;
+  background: transparent;
+  color: var(--green);
+  border: 2px solid var(--green);
+}
+
+.feature {
+  min-height: 150px;
+  text-align: center;
+  padding: 12px;
+  border-left: 1px solid #4d9b12;
+}
+
+.feature-icon {
+  font-size: 43px;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.feature p {
+  color: #eee;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* IMAGE CARDS */
+
+.cards {
+  padding: 12px 3% 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background: #07120b;
+}
+
+.card {
+  min-height: 205px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  border: 2px solid var(--green);
+  border-radius: 13px;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.9),
+    rgba(0,0,0,.12)
+  );
+  z-index: -1;
+}
+
+.card-icon {
+  font-size: 37px;
+  margin-bottom: 3px;
+}
+
+.card h2 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 13px;
+}
+
+.card .button {
+  padding: 10px 25px;
+  min-width: 165px;
+}
+
+.about-card {
+  background-image: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=85");
+}
+
+.benefits-card {
+  background-image: url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=85");
+}
+
+.discover-card {
+  background-image: url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=85");
+}
+
+/* FOOTER */
+
+footer {
+  min-height: 85px;
+  padding: 20px 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  border-top: 3px solid #65c914;
+  background: #050c08;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.footer-icon {
+  color: var(--green);
+  font-size: 27px;
+}
+
+.tagline {
+  color: var(--green);
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* MOBILE */
+
+@media(max-width: 950px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-text {
+    grid-column: 1 / -1;
+  }
+
+  .feature {
+    border-left: none;
+    border-top: 1px solid #4d9b12;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  nav {
+    gap: 3px;
+  }
+
+  nav a {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  nav .contact-link {
+    margin-left: 0;
+  }
+
+  .hero {
+    min-height: 400px;
+    padding: 35px 6%;
+    background-position: center;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .about {
+    padding: 30px 5%;
+  }
+
+  .about-text h2 {
+    font-size: 28px;
+  }
+
+  .feature h3 {
+    font-size: 15px;
+  }
+
+  footer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .tagline {
+    width: 100%;
+  }
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>JCR DRONES</h1>
-        <p>Smart farming. Smarter weed control.</p>
-    </header>
+<!-- HEADER -->
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#benefits">Benefits</a>
-    </nav>
+<header>
+  <div class="logo">
+    JCR <span>DRONES</span>
+    <small>Smart farming. Smarter weed control.</small>
+  </div>
 
-    <section id="home" class="hero">
-        <h2>Welcome to JCR DRONES</h2>
-        <p>Discover an innovative approach to spraying.</p>
-        <a class="button" href="#about">Discover more</a>
-    </section>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="benefits.html">Benefits</a>
+    <a href="discover.html">Discover More</a>
+    <a href="about.html#contact" class="contact-link">☎ Contact Us</a>
+  </nav>
+</header>
 
-    <section id="about">
-        <h2>About the System</h2>
-        <p>
-            JCR Drones combines the cordination from, flying drones in with being able to lighten a famers load.
-            Here at JCR Drones we aspire to help farmers and lighten their load for them so they may sit back and relax.
-			Locally owned and operated in Hokitika, West Coast Drone Spraying provides professional, efficient and reliable drone spraying services throughout Hokitika and the wider West Coast region of New Zealand.
+<!-- HERO -->
 
-We use modern drone technology to deliver precise and targeted spraying solutions across a range of properties and terrain, helping landowners, farmers and businesses manage their land efficiently. Our services are suited to areas that may be difficult to access using traditional spraying methods, offering a practical alternative that can reduce ground disturbance and improve application efficiency.
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      Welcome to<br>
+      <span>JCR DRONES</span>
+    </h1>
 
-As a locally owned business, we take pride in supporting our West Coast community with dependable service, quality workmanship and a strong focus on safety, environmental responsibility and customer satisfaction.
+    <p>
+      Precision drone spraying for a more
+      productive, sustainable future.
+    </p>
 
-Fully licensed and authorised for our approved operations, we are committed to meeting all applicable aviation and spraying requirements, ensuring every job is carried out professionally and responsibly.
+    <a href="discover.html" class="button">
+      Discover More&nbsp; ❯
+    </a>
+  </div>
+</section>
 
-Whether you're a farmer, landowner, contractor or business owner, West Coast Drone Spraying is here to provide a modern, reliable solution tailored to your property and needs.
+<!-- ABOUT -->
 
-Local knowledge. Professional service. Precision from above.
+<section class="about">
 
-Contact us today to discuss your spraying requirements and find out how drone technology can work for you.
-        </p>
-    </section>
+  <div class="about-text">
+    <h2>About JCR Drones</h2>
+    <div class="underline"></div>
 
-    <section id="benefits">
-        <h2>The Benefits</h2>
-        <p>Explore a modern approach to spraying and the best thing of all, you dont need your tractor! Just give us a call and we can spray it in no time</p>
-    </section>
+    <p>
+      We are a locally owned and operated
+      drone spraying service based in Hokitika,
+      West Coast. Our mission is to help farmers,
+      landowners and businesses manage their
+      land efficiently with modern, precise
+      and reliable drone technology.
+    </p>
 
-    <footer>
-        <p>JCR Drones</p>
-    </footer>
+    <a href="about.html" class="button">
+      Learn More About Us ❯
+    </a>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">◎</div>
+    <h3>Precision</h3>
+    <p>Targeted application for better results.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">◴</div>
+    <h3>Efficiency</h3>
+    <p>Get the job done faster.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">♧</div>
+    <h3>Eco-Friendly</h3>
+    <p>Help reduce unnecessary chemical use and soil impact.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">⬡</div>
+    <h3>Safe & Reliable</h3>
+    <p>Professional service with safety in mind.</p>
+  </div>
+
+</section>
+
+<!-- THREE MAIN CARDS -->
+
+<section class="cards">
+
+  <div class="card about-card">
+    <div class="card-icon">ⓘ</div>
+    <h2>About</h2>
+    <p>Learn more about our services and our story.</p>
+    <a href="about.html" class="button">
+      Find Out More ❯
+    </a>
+  </div>
+
+  <div class="card benefits-card">
+    <div class="card-icon">◇</div>
+    <h2>Benefits</h2>
+    <p>Discover the advantages of drone spraying.</p>
+    <a href="benefits.html" class="button">
+      Explore Benefits ❯
+    </a>
+  </div>
+
+  <div class="card discover-card">
+    <div class="card-icon">✥</div>
+    <h2>Discover More</h2>
+    <p>See how drone technology can work for you.</p>
+    <a href="discover.html" class="button">
+      Learn More ❯
+    </a>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-item">
+    <span class="footer-icon">●</span>
+    Hokitika, West Coast – New Zealand
+  </div>
+
+  <div class="footer-item">
+    <span class="footer-icon">☎</span>
+    027 123 4567
+  </div>
+
+  <div class="footer-item">
+    <span class="footer-icon">✉</span>
+    info@jcrdrones.co.nz
+  </div>
+
+  <div class="tagline">
+    Local Knowledge. Professional Service.
+    Precision from Above.
+  </div>
+
+</footer>
 
 </body>
 </html>
