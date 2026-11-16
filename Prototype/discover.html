@@ -580,5 +580,18 @@ footer strong {
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+// CUSTOM JAVASCRIPT: jQuery enhances the existing in-page technology link.
+$(document).ready(function () {
+  $('a[href^="#"]').on("click", function (event) {
+    const target = $($(this).attr("href"));
+    if (target.length) {
+      event.preventDefault();
+      $("html, body").animate({ scrollTop: target.offset().top }, 500);
+    }
+  });
+});
+</script>
 </body>
 </html>
