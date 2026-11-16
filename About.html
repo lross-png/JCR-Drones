@@ -138,29 +138,6 @@ footer{justify-content:center;text-align:center}
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-// CUSTOM JAVASCRIPT: use jQuery to update the information panel in several steps.
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.jQuery) {
-    $("#moreInfoButton").on("click", function () {
-      const information = $("#moreInfoText");
-      const isOpen = information.toggleClass("show").hasClass("show");
-      $(this).attr("aria-expanded", isOpen);
-      $(this).html(isOpen
-        ? '<i class="fa-solid fa-circle-minus" aria-hidden="true"></i> Hide information'
-        : '<i class="fa-solid fa-circle-info" aria-hidden="true"></i> Our approach');
-    });
-  } else {
-    // Fallback keeps the button working if the third-party library cannot load.
-    const button = document.getElementById("moreInfoButton");
-    const information = document.getElementById("moreInfoText");
-    button.addEventListener("click", function () {
-      const isOpen = information.classList.toggle("show");
-      button.setAttribute("aria-expanded", String(isOpen));
-      button.textContent = isOpen ? "Hide information" : "Our approach";
-    });
-  }
-});
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
