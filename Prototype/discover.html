@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -344,17 +343,7 @@ footer strong {
     text-align: center;
   }
 }
-
-/* EXTRA INTERACTIVE INFORMATION */
-.extra-info{max-width:900px;margin:28px auto;padding:0 20px;text-align:center}
-.extra-info button{padding:11px 19px;background:var(--green);color:#07120b;border:0;border-radius:6px;font-weight:bold;font-size:15px;cursor:pointer;transition:.2s}
-.extra-info button:hover{background:white;transform:translateY(-2px)}
-.extra-info button i{margin-right:8px}
-.extra-info p{display:none;margin:15px auto 0;padding:17px 20px;max-width:760px;background:#102017;border-left:3px solid var(--green);border-radius:6px;color:#d7e0d8;line-height:1.7}
-.extra-info p.show{display:block}
-
 </style>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -368,9 +357,9 @@ footer strong {
   </div>
 
   <nav>
-    <a href="Index.html">Home</a>
-    <a href="About.html">About</a>
-    <a href="Benefits.html">Benefits</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="benefits.html">Benefits</a>
     <a href="discover.html" class="active">Discover More</a>
   </nav>
 </header>
@@ -496,7 +485,7 @@ footer strong {
       applicable regulations.
     </p>
 
-    <a href="Benefits.html" class="button">
+    <a href="benefits.html" class="button">
       View All Benefits →
     </a>
   </div>
@@ -574,12 +563,6 @@ footer strong {
 
 <!-- FOOTER -->
 
-
-<section class="extra-info" aria-label="More information">
-  <button type="button" id="moreInfoButton" aria-expanded="false" aria-controls="moreInfoText"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> A closer look at drone spraying</button>
-  <p id="moreInfoText">Drone spraying is one option for selected jobs. Suitability depends on the site, weather, product instructions and applicable safety and operating rules.</p>
-</section>
-
 <footer>
   <div>
     <strong>JCR DRONES</strong>
@@ -597,22 +580,5 @@ footer strong {
   </div>
 </footer>
 
-
-<script>
-// Toggle the additional information when the visitor selects the button.
-document.addEventListener("DOMContentLoaded", function () {
-  const button = document.getElementById("moreInfoButton");
-  const information = document.getElementById("moreInfoText");
-  if (button && information) {
-    button.addEventListener("click", function () {
-      const isOpen = information.classList.toggle("show");
-      button.setAttribute("aria-expanded", String(isOpen));
-      button.innerHTML = (isOpen
-        ? '<i class="fa-solid fa-circle-minus" aria-hidden="true"></i> Hide information'
-        : '<i class="fa-solid fa-circle-info" aria-hidden="true"></i> A closer look at drone spraying');
-    });
-  }
-});
-</script>
 </body>
 </html>
