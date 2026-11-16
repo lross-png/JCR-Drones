@@ -47,7 +47,17 @@ nav a{padding:10px}
 .grid{grid-template-columns:1fr}
 footer{justify-content:center;text-align:center}
 }
+
+/* EXTRA INTERACTIVE INFORMATION */
+.extra-info{max-width:900px;margin:28px auto;padding:0 20px;text-align:center}
+.extra-info button{padding:11px 19px;background:var(--green);color:#07120b;border:0;border-radius:6px;font-weight:bold;font-size:15px;cursor:pointer;transition:.2s}
+.extra-info button:hover{background:white;transform:translateY(-2px)}
+.extra-info button i{margin-right:8px}
+.extra-info p{display:none;margin:15px auto 0;padding:17px 20px;max-width:760px;background:#102017;border-left:3px solid var(--green);border-radius:6px;color:#d7e0d8;line-height:1.7}
+.extra-info p.show{display:block}
+
 </style>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
 
@@ -55,9 +65,9 @@ footer{justify-content:center;text-align:center}
 <div class="logo">JCR <span>DRONES</span>
 <small>Smart farming. Smarter weed control.</small></div>
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="benefits.html" class="active">Benefits</a>
+<a href="Index.html">Home</a>
+<a href="About.html">About</a>
+<a href="Benefits.html" class="active">Benefits</a>
 <a href="discover.html">Discover More</a>
 </nav>
 </header>
@@ -131,10 +141,33 @@ footer{justify-content:center;text-align:center}
 <a href="about.html#contact" class="button">Contact JCR Drones →</a>
 </section>
 
+
+<section class="extra-info" aria-label="More information">
+  <button type="button" id="moreInfoButton" aria-expanded="false" aria-controls="moreInfoText"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Is drone spraying suitable?</button>
+  <p id="moreInfoText">The benefits depend on the property and the job. Terrain, weather, treatment area and product requirements all need to be considered before choosing a spraying method.</p>
+</section>
+
 <footer>
 <div><strong>JCR DRONES</strong><br>Smart farming. Smarter weed control.</div>
 <div>Hokitika · West Coast · New Zealand</div>
 </footer>
 
+
+<script>
+// Toggle the additional information when the visitor selects the button.
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.getElementById("moreInfoButton");
+  const information = document.getElementById("moreInfoText");
+  if (button && information) {
+    button.addEventListener("click", function () {
+      const isOpen = information.classList.toggle("show");
+      button.setAttribute("aria-expanded", String(isOpen));
+      button.innerHTML = (isOpen
+        ? '<i class="fa-solid fa-circle-minus" aria-hidden="true"></i> Hide information'
+        : '<i class="fa-solid fa-circle-info" aria-hidden="true"></i> Is drone spraying suitable?');
+    });
+  }
+});
+</script>
 </body>
 </html>
